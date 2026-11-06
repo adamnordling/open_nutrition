@@ -1,0 +1,6 @@
+Contact: https://github.com/adamnordling/open_nutrition/security/advisories/new
+Contact: https://www.linkedin.com/in/adamnordling
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, sv
+Canonical: https://opennutrition.adamnordling.se/.well-known/security.txt
+Hiring: https://adamnordling.se/

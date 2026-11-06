@@ -1,0 +1,23 @@
+{
+  "name": "Open Nutrition: Precision Bio-Nutrition Tracker",
+  "short_name": "Open Nutrition",
+  "description": "Local-first nutrition tracker analyzing gross ingestion vs net biological absorption, micronutrient ratios, and deep biochemistry.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfdfc",
+  "theme_color": "#10b981",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/assets/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
