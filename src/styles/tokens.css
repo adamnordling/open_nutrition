@@ -1,0 +1,39 @@
+@layer tokens {
+    :root {
+        --bg-color: #fbfdfc;
+        --card-bg: #ffffff;
+        --card-hover: #f8faf9;
+        --text-color: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --text-subtle: #94a3b8;
+
+        --primary-color: #10b981;
+        --primary-hover: #059669;
+        --primary-dark: #065f46;
+        --primary-light: #ecfdf5;
+        --primary-border: rgba(16, 185, 129, 0.25);
+
+        --border-color: #e2e8f0;
+        --border-subtle: #f1f5f9;
+
+        --danger-color: #ef4444;
+        --danger-bg: #fef2f2;
+        --danger-border: #fee2e2;
+
+        --warning-color: #f59e0b;
+        --warning-bg: #fffbeb;
+        --warning-border: #fde68a;
+
+        --info-color: #3b82f6;
+        --info-light: #eff6ff;
+
+        --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+        --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.06), 0 3px 8px -2px rgba(0, 0, 0, 0.03);
+        --shadow-lg: 0 16px 32px -6px rgba(0, 0, 0, 0.08), 0 6px 12px -3px rgba(0, 0, 0, 0.04);
+
+        --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', Roboto, sans-serif;
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+}

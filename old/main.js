@@ -1,6 +1,180 @@
 import { RDA_TARGETS, UL_TARGETS, NUTRIENT_UNITS } from './schema.js';
 import { FOOD_DATABASE } from './foods.js';
 
+
+// Add to src/main.js (replacing previous import handlers)
+import { extractProductFromText } from './groceryParser.js';
+
+const urlModal = document.getElementById('url-import-modal');
+const openUrlModalBtn = document.getElementById('open-url-import-btn');
+const importUrlInput = document.getElementById('import-url-input');
+const fetchUrlBtn = document.getElementById('fetch-url-btn');
+const botWarning = document.getElementById('bot-blocked-warning');
+
+const tabImportUrl = document.getElementById('tab-import-url');
+const tabImportText = document.getElementById('tab-import-text');
+const sectionUrl = document.getElementById('import-url-section');
+const sectionText = document.getElementById('import-text-section');
+const textInput = document.getElementById('import-text-input');
+const parseTextBtn = document.getElementById('parse-text-btn');
+
+const previewBox = document.getElementById('import-preview-box');
+const previewTitle = document.getElementById('import-preview-title');
+const previewMatchedBadge = document.getElementById('import-matched-badge');
+const previewIngredientsWrapper = document.getElementById('preview-ingredients-wrapper');
+const previewIngredients = document.getElementById('import-preview-ingredients');
+const previewMacros = document.getElementById('import-preview-macros');
+const importAmountInput = document.getElementById('import-amount-input');
+const confirmImportBtn = document.getElementById('confirm-import-btn');
+
+let parsedImportResult = null;
+
+// Clean Tab Switching
+tabImportUrl?.addEventListener('click', () => {
+    tabImportUrl.classList.add('active');
+    tabImportText.classList.remove('active');
+    sectionUrl.classList.remove('hidden');
+    sectionText.classList.add('hidden');
+});
+
+tabImportText?.addEventListener('click', () => {
+    tabImportText.classList.add('active');
+    tabImportUrl.classList.remove('active');
+    sectionText.classList.remove('hidden');
+    sectionUrl.classList.add('hidden');
+});
+
+openUrlModalBtn?.addEventListener('click', () => {
+    modalBackdrop.classList.remove('hidden');
+    urlModal.classList.remove('hidden');
+    botWarning.classList.add('hidden');
+    previewBox.classList.add('hidden');
+    if (confirmImportBtn) confirmImportBtn.disabled = true;
+    if (textInput) textInput.value = '';
+    if (importUrlInput) importUrlInput.value = '';
+});
+
+// Real-time Macro & Ingredient Scaler
+function updateScaledPreview() {
+    if (!parsedImportResult) return;
+
+    const targetGrams = parseFloat(importAmountInput?.value) || 0;
+    const factor = targetGrams / 100; // Package nutrition is per 100g
+    const m = parsedImportResult.nutritionPer100g;
+
+    // Scale Macros
+    const cals = Math.round(m.Calories * factor);
+    const prot = (m.Protein * factor).toFixed(1);
+    const carbs = (m.Carbs * factor).toFixed(1);
+    const fat = (m.Fat * factor).toFixed(1);
+    const fiber = (m.Fiber * factor).toFixed(1);
+
+    if (previewMacros) {
+        previewMacros.innerHTML = `
+            <div style="font-weight: 700; margin-bottom: 2px;">Total for ${targetGrams}g:</div>
+            <div>
+                <strong>${cals}</strong> kcal • 
+                Protein: <strong>${prot}g</strong> • 
+                Carbs: <strong>${carbs}g</strong> • 
+                Fat: <strong>${fat}g</strong> • 
+                Fiber: <strong>${fiber}g</strong>
+            </div>
+        `;
+    }
+
+    // Scale Sub-Ingredients (if percentages exist)
+    if (parsedImportResult.ingredients.length > 0) {
+        previewIngredientsWrapper.classList.remove('hidden');
+        previewIngredients.innerHTML = '';
+        parsedImportResult.ingredients.forEach(ing => {
+            const badge = document.createElement('span');
+            badge.className = 'ingredient-pill';
+            const ingGrams = ing.percent ? Math.round((ing.percent / 100) * targetGrams) : null;
+            badge.textContent = `${ing.name}${ing.percent ? ` (${ing.percent}% → ${ingGrams}g)` : ''}`;
+            previewIngredients.appendChild(badge);
+        });
+    } else {
+        previewIngredientsWrapper.classList.add('hidden');
+    }
+}
+
+function displayParsedProduct(result) {
+    parsedImportResult = result;
+    if (previewTitle) previewTitle.textContent = result.foodDef.displayName;
+
+    if (previewMatchedBadge) {
+        if (result.matchedBaseFoodName) {
+            previewMatchedBadge.textContent = `⚡ Synced with ${result.matchedBaseFoodName} micros`;
+            previewMatchedBadge.classList.remove('hidden');
+        } else {
+            previewMatchedBadge.classList.add('hidden');
+        }
+    }
+
+    updateScaledPreview();
+    previewBox.classList.remove('hidden');
+    if (confirmImportBtn) confirmImportBtn.disabled = false;
+}
+
+// Live update when portion weight changes
+importAmountInput?.addEventListener('input', updateScaledPreview);
+
+// 1. Text Parse Action
+parseTextBtn?.addEventListener('click', () => {
+    const raw = textInput?.value.trim();
+    if (!raw) return alert('Please paste some text first.');
+    const parsed = extractProductFromText(raw, 'Pasted Product');
+    displayParsedProduct(parsed);
+});
+
+// 2. Fetch URL Action
+fetchUrlBtn?.addEventListener('click', async () => {
+    const rawUrl = importUrlInput?.value.trim();
+    if (!rawUrl) return alert('Please enter a URL.');
+
+    fetchUrlBtn.textContent = 'Fetching...';
+    fetchUrlBtn.disabled = true;
+    botWarning.classList.add('hidden');
+
+    try {
+        const proxyUrl = `/api/proxy-scrape?url=${encodeURIComponent(rawUrl)}`;
+        const res = await fetch(proxyUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const html = await res.text();
+        const parsed = extractProductFromText(html, rawUrl);
+        displayParsedProduct(parsed);
+    } catch (err) {
+        botWarning.classList.remove('hidden');
+    } finally {
+        fetchUrlBtn.textContent = 'Fetch';
+        fetchUrlBtn.disabled = false;
+    }
+});
+
+// 3. Confirm and Add
+confirmImportBtn?.addEventListener('click', () => {
+    if (!parsedImportResult) return;
+
+    const amountGrams = parseFloat(importAmountInput?.value) || 100;
+    const foodDef = parsedImportResult.foodDef;
+
+    // Register into active database
+    FOOD_DATABASE[foodDef.id] = foodDef;
+
+    const day = getCurrentDayData();
+    day.unassigned.push({
+        id: Date.now() + Math.random(),
+        foodKey: foodDef.id,
+        amount: amountGrams,
+        displayName: foodDef.displayName
+    });
+
+    persistActiveWeek();
+    renderDietList();
+    renderNutritionPanel();
+    closeModal();
+    showToast(`Added ${foodDef.displayName} (${amountGrams}g)`);
+});
 /* ==========================================================================
    1. APPLICATION STATE & CONFIGURATION
    ========================================================================== */

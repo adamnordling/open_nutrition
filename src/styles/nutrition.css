@@ -1,0 +1,448 @@
+/* src/styles/nutrition.css */
+@layer components {
+    .nutrition-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-subtle);
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+    }
+
+    .nutrition-header h2 {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--text-color);
+    }
+
+    .header-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .indicator {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--primary-color);
+        background: var(--primary-light);
+        padding: 3px 8px;
+        border-radius: 6px;
+    }
+
+    .toggle-all-btn {
+        background: none;
+        border: 1px solid var(--border-color);
+        color: var(--text-muted);
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+    }
+
+    .toggle-all-btn:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .nutrition-grid-wrapper {
+        flex-grow: 1;
+        min-height: 300px;
+    }
+
+    .nutrition-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        align-items: start;
+    }
+
+    @media (max-width: 950px) {
+        .nutrition-columns {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .nutrition-column {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nutrient-category {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 12px 14px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        transition: all 0.15s ease;
+        cursor: pointer;
+    }
+
+    .nutrient-category:hover {
+        border-color: #cbd5e1;
+        background-color: var(--card-hover);
+    }
+
+    .nutrient-category h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-color);
+        letter-spacing: -0.01em;
+    }
+
+    .cat-title-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .cat-icon-svg {
+        width: 15px;
+        height: 15px;
+        stroke: var(--text-muted);
+    }
+
+    .cat-progress-badge {
+        font-size: 11px;
+        color: var(--primary-dark);
+        font-weight: 600;
+        background: var(--primary-light);
+        padding: 1px 6px;
+        border-radius: 4px;
+    }
+
+    .toggle-icon {
+        font-size: 11px;
+        color: var(--text-muted);
+        transition: transform 0.2s ease;
+    }
+
+    .nutrient-category.collapsed .toggle-icon {
+        transform: rotate(-90deg);
+    }
+
+    .category-progress-bar {
+        width: 100%;
+        height: 3px;
+        background-color: #f1f5f9;
+        margin-top: 6px;
+        margin-bottom: 10px;
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .category-progress-fill {
+        height: 100%;
+        background-color: var(--primary-color);
+        width: 0%;
+        transition: width 0.3s ease;
+        border-radius: 2px;
+    }
+
+    .limit-category .category-progress-fill {
+        background-color: var(--danger-color) !important;
+    }
+
+    .nutrient-category.limit-category {
+        border-color: #fee2e2;
+        background: #fffafa;
+    }
+
+    .category-content {
+        display: block;
+        margin-top: 10px;
+        cursor: default;
+    }
+
+    .category-content.hidden {
+        display: none;
+    }
+
+    /* Nutrient Rows */
+    .nutrient-row {
+        padding: 7px 0;
+        border-bottom: 1px dashed var(--border-subtle);
+    }
+
+    .nutrient-row:last-child {
+        border-bottom: none;
+    }
+
+    .nutrient-row.clickable-row {
+        cursor: pointer;
+        transition: background-color 0.12s ease;
+        padding: 7px 8px;
+        margin-left: -8px;
+        width: calc(100% + 16px);
+        border-radius: 6px;
+    }
+
+    .nutrient-row.clickable-row:hover {
+        background-color: #f8fafc;
+    }
+
+    .nutrient-row.indent-1.clickable-row { padding-left: 14px; }
+    .nutrient-row.indent-2.clickable-row { padding-left: 26px; }
+    .nutrient-row.indent-3.clickable-row { padding-left: 38px; }
+
+    .nutrient-row.indent-1 .nutrient-info span:first-child::before {
+        content: '↳ ';
+        color: var(--text-subtle);
+        font-family: var(--font-mono);
+        font-weight: bold;
+        margin-right: 4px;
+    }
+
+    .nutrient-row.indent-2 .nutrient-info span:first-child::before {
+        content: '    ↳ ';
+        color: var(--text-subtle);
+        font-family: var(--font-mono);
+        font-weight: bold;
+        margin-right: 4px;
+    }
+
+    .nutrient-row.indent-3 .nutrient-info span:first-child::before {
+        content: '        ↳ ';
+        color: var(--text-subtle);
+        font-family: var(--font-mono);
+        font-weight: bold;
+        margin-right: 4px;
+    }
+
+    .nutrient-row.subheader {
+        font-weight: 700;
+        color: var(--text-secondary);
+        background-color: #f8fafc;
+        padding: 5px 8px;
+        margin-top: 10px;
+        margin-bottom: 4px;
+        border-radius: 4px;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .nutrient-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    .nutrient-info span:last-child {
+        font-weight: 600;
+        font-family: var(--font-mono);
+    }
+
+    .rda-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        height: 6px;
+        background-color: transparent;
+        position: relative;
+    }
+
+    .rda-bar-wrapper {
+        display: flex;
+        flex: 1;
+        height: 6px;
+        background-color: #f1f5f9;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .rda-bar {
+        height: 100%;
+        background-color: var(--primary-color);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+    }
+
+    .rda-bar.exceeded { background-color: var(--info-color); }
+    .rda-bar.over-limit { background-color: var(--warning-color) !important; }
+    .rda-bar.limit-under { background-color: #fecaca !important; }
+    .rda-bar.limit-over { background-color: var(--danger-color) !important; }
+
+    .percentage-label {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--text-muted);
+        text-align: right;
+        width: 70px;
+        flex-shrink: 0;
+        font-family: var(--font-mono);
+    }
+
+    .percentage-label.over-limit-text { color: #ea580c !important; }
+
+    .rda-bar.unabsorbed {
+        opacity: 0.35 !important;
+        background-image: linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.25) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.25) 50%,
+            rgba(255, 255, 255, 0.25) 75%,
+            transparent 75%,
+            transparent
+        ) !important;
+        background-size: 8px 8px !important;
+    }
+
+    .rda-container.no-target-layout {
+        background-color: transparent !important;
+    }
+
+    .rda-dots {
+        letter-spacing: 3px;
+        color: #cbd5e1;
+        font-size: 12px;
+    }
+
+    .nt-badge {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--text-subtle);
+        width: 70px;
+        text-align: right;
+    }
+
+    .no-target-val { color: var(--text-muted); }
+
+    /* Analysis Drawer */
+    .nutrient-details-panel {
+        background-color: #fcfdfd;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 14px;
+        margin: 6px 8px 6px -8px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .nutrient-details-panel h4 {
+        font-size: 12px;
+        margin-bottom: 6px;
+        font-weight: 700;
+        color: var(--text-color);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .detail-description {
+        font-size: 12px;
+        color: var(--text-secondary);
+        line-height: 1.5;
+        white-space: pre-line;
+        margin: 8px 0 10px 0;
+    }
+
+    .sources-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .sources-container.single-column { grid-template-columns: 1fr; }
+
+    .sources-list {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        padding: 8px 10px;
+    }
+
+    .sources-list h5 {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        color: var(--text-muted);
+        margin-bottom: 5px;
+        border-bottom: 1px solid var(--border-subtle);
+        padding-bottom: 3px;
+    }
+
+    .source-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        padding: 3px 0;
+    }
+
+    .source-item span:last-child {
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
+    /* Calibrated Multi-color Meter */
+    .detailed-meter-container {
+        margin: 12px 0 16px 0;
+        position: relative;
+        user-select: none;
+    }
+
+    .meter-bar-wrapper {
+        position: relative;
+        height: 16px;
+        margin: 6px 0;
+    }
+
+    .meter-bar {
+        height: 7px;
+        border-radius: 4px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .meter-marker {
+        position: absolute;
+        top: -5px;
+        font-size: 8px;
+        color: #e67e22;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .meter-tick {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: rgba(255, 255, 255, 0.85);
+        z-index: 5;
+    }
+
+    .meter-labels-top,
+    .meter-labels-bottom {
+        position: relative;
+        height: 12px;
+        font-size: 9px;
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+
+    .meter-labels-top span,
+    .meter-labels-bottom span {
+        position: absolute;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    .meter-labels-bottom .zero-label {
+        transform: none;
+        left: 0;
+    }
+}

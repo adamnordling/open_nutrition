@@ -1,0 +1,73 @@
+/* src/styles/base.css */
+@layer reset {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-stack);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        position: relative;
+        letter-spacing: -0.015em;
+    }
+
+    .ambient-glow {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(100px);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .glow-top-left {
+        top: -8vw;
+        left: -8vw;
+        width: 35vw;
+        height: 35vw;
+        min-width: 440px;
+        min-height: 440px;
+        max-width: 620px;
+        max-height: 620px;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.17) 0%, rgba(52, 211, 153, 0.05) 55%, transparent 75%);
+    }
+
+    .glow-top-right {
+        top: 2vw;
+        right: -8vw;
+        width: 32vw;
+        height: 32vw;
+        min-width: 400px;
+        min-height: 400px;
+        max-width: 580px;
+        max-height: 580px;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.13) 0%, rgba(110, 231, 183, 0.04) 60%, transparent 80%);
+    }
+
+    .resizable-scroll-container {
+        overflow-y: auto;
+        border-radius: 6px;
+        padding-right: 4px;
+    }
+
+    .resizable-scroll-container::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .resizable-scroll-container::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+
+    .resizable-scroll-container::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}

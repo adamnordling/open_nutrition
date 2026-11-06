@@ -1,0 +1,293 @@
+/* src/styles/summary.css */
+@layer components {
+    .nutrition-summary-dashboard {
+        background: #fafcfb;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 14px 18px;
+        margin-bottom: 16px;
+        display: grid;
+        grid-template-columns: 1.15fr 1.35fr;
+        gap: 22px;
+        align-items: center;
+    }
+
+    .summary-left-col {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        border-right: 1px solid var(--border-color);
+        padding-right: 20px;
+    }
+
+    .summary-rings-panel {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .ring-widget {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .ring-svg-container {
+        position: relative;
+        width: 62px;
+        height: 62px;
+    }
+
+    .circular-ring {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+    }
+
+    .ring-bg {
+        fill: none;
+        stroke: #e2e8f0;
+        stroke-width: 3.2;
+    }
+
+    .ring-fill {
+        fill: none;
+        stroke-width: 3.2;
+        stroke-linecap: round;
+        transition: stroke-dasharray 0.4s ease;
+    }
+
+    .energy-fill { stroke: var(--primary-color); }
+    .target-fill { stroke: var(--info-color); }
+    .remaining-fill { stroke: #94a3b8; }
+
+    .ring-center-text {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ring-val {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--text-color);
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .ring-unit {
+        font-size: 9px;
+        color: var(--text-muted);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 2px;
+    }
+
+    .ring-label {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Water Tracker */
+    .water-tracker-card {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 8px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .water-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .water-title-group {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .water-title {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--text-color);
+    }
+
+    .water-vol-text {
+        font-size: 11px;
+        color: #0284c7;
+        font-weight: 700;
+        font-family: var(--font-mono);
+    }
+
+    .water-glasses-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+    }
+
+    .water-btn {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        background: #f0f9ff;
+        color: #0284c7;
+        border: 1px solid #bae6fd;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .water-btn:hover {
+        background: #0284c7;
+        color: #ffffff;
+    }
+
+    .glasses-container {
+        display: flex;
+        gap: 5px;
+    }
+
+    .glass-btn {
+        width: 14px;
+        height: 18px;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 2px 2px 4px 4px;
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+        padding: 0;
+        transition: all 0.15s ease;
+    }
+
+    .glass-btn.active {
+        border-color: #0284c7;
+        background: #0284c7;
+    }
+
+    .water-progress-track {
+        width: 100%;
+        height: 4px;
+        background: #e0f2fe;
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .water-progress-bar {
+        height: 100%;
+        background: #0284c7;
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    /* Macro Rows */
+    .summary-macros-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .macro-target-row {
+        display: grid;
+        grid-template-columns: 75px 1fr 135px 38px;
+        align-items: center;
+        gap: 10px;
+        font-size: 11px;
+    }
+
+    .macro-name {
+        font-weight: 600;
+        color: var(--text-color);
+    }
+
+    .macro-progress-track {
+        width: 100%;
+        height: 6px;
+        background: #e2e8f0;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .macro-bar {
+        height: 100%;
+        border-radius: 3px;
+        transition: width 0.3s ease;
+    }
+
+    .energy-bar { background: var(--primary-color); }
+    .protein-bar { background: var(--info-color); }
+    .carbs-bar { background: var(--warning-color); }
+    .fat-bar { background: #8b5cf6; }
+    .glycine-bar { background: #06b6d4; }
+
+    .macro-vals {
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+    }
+
+    .macro-pct {
+        font-weight: 700;
+        color: var(--text-muted);
+        text-align: right;
+        font-family: var(--font-mono);
+    }
+
+    .glycine-ratio-card {
+        background: #f0fdfa;
+        border: 1px solid #ccfbf1;
+        border-radius: 6px;
+        padding: 6px 10px;
+        margin-top: 2px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .glycine-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 10px;
+    }
+
+    .glycine-title {
+        font-weight: 700;
+        color: #0f766e;
+    }
+
+    .glycine-score {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        color: #0d9488;
+    }
+
+    @media (max-width: 1150px) {
+        .nutrition-summary-dashboard {
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        .summary-left-col {
+            border-right: none;
+            border-bottom: 1px solid var(--border-color);
+            padding-right: 0;
+            padding-bottom: 14px;
+        }
+    }
+}
