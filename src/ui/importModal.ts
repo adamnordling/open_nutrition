@@ -118,13 +118,19 @@ export function initImportModal(showToast: (msg: string) => void): void {
 
     parseTextBtn?.addEventListener('click', () => {
         const text = textInput?.value.trim();
-        if (!text) return alert('Please paste some text first.');
+        if (!text) {
+            alert('Please paste some text first.');
+            return;
+        }
         displayProduct(extractProductFromText(text, 'Pasted Product'));
     });
 
     fetchUrlBtn?.addEventListener('click', async () => {
         const url = urlInput?.value.trim();
-        if (!url) return alert('Please enter a product URL.');
+        if (!url) {
+            alert('Please enter a product URL.');
+            return;
+        }
 
         fetchUrlBtn.textContent = 'Fetching...';
         (fetchUrlBtn as HTMLButtonElement).disabled = true;

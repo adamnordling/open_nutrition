@@ -25,7 +25,9 @@
         padding: 0 4px;
     }
 
-    .clear-slot-btn:hover { color: var(--danger-color); }
+    .clear-slot-btn:hover {
+        color: var(--danger-color);
+    }
 
     .color-picker-wrapper {
         display: flex;
@@ -54,7 +56,9 @@
         transition: transform 0.15s ease;
     }
 
-    .color-dot:hover { transform: scale(1.15); }
+    .color-dot:hover {
+        transform: scale(1.15);
+    }
     .color-dot.active {
         border-color: #0f172a;
         box-shadow: 0 0 0 2px white inset;

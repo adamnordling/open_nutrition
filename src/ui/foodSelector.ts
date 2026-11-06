@@ -306,8 +306,8 @@ export function initFoodSelector(): void {
         } else if (e.key === 'Enter') {
             e.preventDefault();
             const q = searchInput?.value.trim().toLowerCase() ?? '';
-            const filtered = getSortedFoods().filter(f =>
-                !q || f.displayName.toLowerCase().includes(q) || f.aliases.some(a => a.toLowerCase().includes(q))
+            const filtered = getSortedFoods().filter(
+                f => !q || f.displayName.toLowerCase().includes(q) || f.aliases.some(a => a.toLowerCase().includes(q))
             );
             if (highlightedFoodIndex >= 0 && filtered[highlightedFoodIndex]) {
                 selectFood(filtered[highlightedFoodIndex].key);

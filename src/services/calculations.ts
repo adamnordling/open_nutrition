@@ -17,7 +17,10 @@ export function getNutrientValue(item: DietItem, category: CategoryKey, nutrient
 export function calculateAggregate(items: DietItem[]): AggregatedNutrients {
     const totals = {} as AggregatedNutrients;
 
-    for (const [cat, compounds] of Object.entries(NUTRIENT_UNITS) as [CategoryKey, typeof NUTRIENT_UNITS[CategoryKey]][]) {
+    for (const [cat, compounds] of Object.entries(NUTRIENT_UNITS) as [
+        CategoryKey,
+        (typeof NUTRIENT_UNITS)[CategoryKey]
+    ][]) {
         totals[cat] = {};
         for (const compound of Object.keys(compounds)) {
             totals[cat][compound] = 0;

@@ -1,109 +1,112 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <!-- Primary Title & Description -->
-    <title>Open Nutrition | Precision Biochemical Nutrition Tracker</title>
-    <meta
-        name="description"
-        content="Free, local-first nutrition tracker analyzing gross ingestion vs net biological absorption, micronutrient balance ratios, RDA/UL calibrations, and composite grocery food breakdowns."
-    />
-    <meta name="author" content="Adam Nordling" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <link rel="canonical" href="https://opennutrition.adamnordling.se/" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <!-- Primary Title & Description -->
+        <title>Open Nutrition | Precision Biochemical Nutrition Tracker</title>
+        <meta
+            name="description"
+            content="Free, local-first nutrition tracker analyzing gross ingestion vs net biological absorption, micronutrient balance ratios, RDA/UL calibrations, and composite grocery food breakdowns."
+        />
+        <meta name="author" content="Adam Nordling" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <link rel="canonical" href="https://opennutrition.adamnordling.se/" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <!-- Color Scheme & Theme Color -->
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0c0f17" media="(prefers-color-scheme: dark)" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Open Nutrition" />
+        <!-- Color Scheme & Theme Color -->
+        <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0c0f17" media="(prefers-color-scheme: dark)" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Open Nutrition" />
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.webmanifest" />
+        <!-- Favicons -->
+        <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:site_name" content="Open Nutrition · Adam Nordling" />
-    <meta property="og:title" content="Open Nutrition | Precision Biochemical Nutrition Tracker" />
-    <meta
-        property="og:description"
-        content="Zero-tracking client-side tracker for calories, macros, vitamins, minerals, and deep bioactives with gross vs net absorption modeling."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://opennutrition.adamnordling.se/" />
-    <meta property="og:image" content="https://opennutrition.adamnordling.se/favicons/android-chrome-512x512.png" />
-    <meta property="og:image:secure_url" content="https://opennutrition.adamnordling.se/favicons/android-chrome-512x512.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:image:alt" content="Open Nutrition Application Logo" />
+        <!-- Open Graph / Social Media -->
+        <meta property="og:site_name" content="Open Nutrition · Adam Nordling" />
+        <meta property="og:title" content="Open Nutrition | Precision Biochemical Nutrition Tracker" />
+        <meta
+            property="og:description"
+            content="Zero-tracking client-side tracker for calories, macros, vitamins, minerals, and deep bioactives with gross vs net absorption modeling."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://opennutrition.adamnordling.se/" />
+        <meta property="og:image" content="https://opennutrition.adamnordling.se/favicons/android-chrome-512x512.png" />
+        <meta
+            property="og:image:secure_url"
+            content="https://opennutrition.adamnordling.se/favicons/android-chrome-512x512.png"
+        />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <meta property="og:image:alt" content="Open Nutrition Application Logo" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@adamnordling" />
-    <meta name="twitter:creator" content="@adamnordling" />
-    <meta name="twitter:title" content="Open Nutrition | Precision Biochemical Nutrition Tracker" />
-    <meta
-        name="twitter:description"
-        content="Zero-tracking client-side tracker for calories, macros, vitamins, minerals, and deep bioactives with gross vs net absorption modeling."
-    />
-    <meta name="twitter:image" content="https://opennutrition.adamnordling.se/favicons/android-chrome-512x512.png" />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@adamnordling" />
+        <meta name="twitter:creator" content="@adamnordling" />
+        <meta name="twitter:title" content="Open Nutrition | Precision Biochemical Nutrition Tracker" />
+        <meta
+            name="twitter:description"
+            content="Zero-tracking client-side tracker for calories, macros, vitamins, minerals, and deep bioactives with gross vs net absorption modeling."
+        />
+        <meta
+            name="twitter:image"
+            content="https://opennutrition.adamnordling.se/favicons/android-chrome-512x512.png"
+        />
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./src/style.css" />
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="./src/style.css" />
 
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    "@type": "WebApplication",
-                    "@id": "https://opennutrition.adamnordling.se/#webapp",
-                    "url": "https://opennutrition.adamnordling.se/",
-                    "name": "Open Nutrition: Precision Bio-Nutrition Tracker",
-                    "applicationCategory": "HealthApplication, LifestyleApplication",
-                    "operatingSystem": "All",
-                    "browserRequirements": "Requires JavaScript. Requires HTML5.",
-                    "description": "Local-first nutrition and bioavailability tracker computing gross ingestion vs net physiological uptake, amino acid ratios, and composite food breakdowns.",
-                    "image": "https://opennutrition.adamnordling.se/favicons/android-chrome-512x512.png",
-                    "author": {
-                        "@type": "Person",
-                        "@id": "https://adamnordling.se/#person",
-                        "name": "Adam Nordling",
-                        "url": "https://adamnordling.se/",
-                        "sameAs": [
-                            "https://github.com/adamnordling",
-                            "https://www.linkedin.com/in/adamnordling"
-                        ]
-                    },
-                    "publisher": {
-                        "@type": "Organization",
-                        "@id": "https://adamnordling.se/#organization",
-                        "name": "Adam Nordling",
-                        "url": "https://adamnordling.se/"
-                    },
-                    "isPartOf": {
-                        "@type": "WebSite",
-                        "@id": "https://adamnordling.se/#website",
-                        "name": "Adam Nordling",
-                        "url": "https://adamnordling.se/"
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebApplication",
+                        "@id": "https://opennutrition.adamnordling.se/#webapp",
+                        "url": "https://opennutrition.adamnordling.se/",
+                        "name": "Open Nutrition: Precision Bio-Nutrition Tracker",
+                        "applicationCategory": "HealthApplication, LifestyleApplication",
+                        "operatingSystem": "All",
+                        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                        "description": "Local-first nutrition and bioavailability tracker computing gross ingestion vs net physiological uptake, amino acid ratios, and composite food breakdowns.",
+                        "image": "https://opennutrition.adamnordling.se/favicons/android-chrome-512x512.png",
+                        "author": {
+                            "@type": "Person",
+                            "@id": "https://adamnordling.se/#person",
+                            "name": "Adam Nordling",
+                            "url": "https://adamnordling.se/",
+                            "sameAs": ["https://github.com/adamnordling", "https://www.linkedin.com/in/adamnordling"]
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "@id": "https://adamnordling.se/#organization",
+                            "name": "Adam Nordling",
+                            "url": "https://adamnordling.se/"
+                        },
+                        "isPartOf": {
+                            "@type": "WebSite",
+                            "@id": "https://adamnordling.se/#website",
+                            "name": "Adam Nordling",
+                            "url": "https://adamnordling.se/"
+                        }
                     }
-                }
-            ]
-        }
-    </script>
-</head>
+                ]
+            }
+        </script>
+    </head>
     <body>
         <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
         <div class="ambient-glow glow-top-right" aria-hidden="true"></div>
@@ -169,14 +172,32 @@
             <section class="left-panel">
                 <div class="mode-tabs">
                     <button id="tab-diet" class="tab-btn active" type="button">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
                             <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
                             <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
                         </svg>
                         <span>Food Tracker</span>
                     </button>
                     <button id="tab-compare" class="tab-btn" type="button">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
                             <path d="M16 3h5v5"></path>
                             <path d="M8 3H3v5"></path>
                             <path d="M12 21V11"></path>
@@ -195,7 +216,9 @@
                                 <span class="insight-badge">Biological Profile</span>
                                 <h4 id="insight-food-title">Food Name</h4>
                             </div>
-                            <button type="button" id="close-insight-btn" class="close-insight-btn" title="Close note">&times;</button>
+                            <button type="button" id="close-insight-btn" class="close-insight-btn" title="Close note">
+                                &times;
+                            </button>
                         </div>
                         <p class="insight-family" id="insight-family">Family / Origin</p>
                         <div class="insight-tags" id="insight-tags"></div>
@@ -227,17 +250,37 @@
                             <button type="button" class="day-btn" data-day="Sun">Sun</button>
                         </div>
                         <div class="week-actions-row">
-                            <button type="button" id="copy-prev-day-btn" class="week-action-btn" title="Copy previous day's meals">
+                            <button
+                                type="button"
+                                id="copy-prev-day-btn"
+                                class="week-action-btn"
+                                title="Copy previous day's meals"
+                            >
                                 Copy Prev Day
                             </button>
                             <div class="save-load-group">
-                                <button type="button" id="save-week-btn" class="week-action-btn" title="Save this week plan">
+                                <button
+                                    type="button"
+                                    id="save-week-btn"
+                                    class="week-action-btn"
+                                    title="Save this week plan"
+                                >
                                     Save Week
                                 </button>
-                                <button type="button" id="load-week-btn" class="week-action-btn" title="Load a saved week plan">
+                                <button
+                                    type="button"
+                                    id="load-week-btn"
+                                    class="week-action-btn"
+                                    title="Load a saved week plan"
+                                >
                                     Load Week
                                 </button>
-                                <button type="button" id="clear-week-btn" class="week-action-btn danger" title="Clear entire week">
+                                <button
+                                    type="button"
+                                    id="clear-week-btn"
+                                    class="week-action-btn danger"
+                                    title="Clear entire week"
+                                >
                                     Clear Week
                                 </button>
                             </div>
@@ -249,7 +292,17 @@
                         <!-- Step 1: Search -->
                         <div id="food-step-search" class="food-input-step">
                             <div class="search-input-wrapper">
-                                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg
+                                    class="search-icon"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
                                     <circle cx="11" cy="11" r="8"></circle>
                                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                 </svg>
@@ -260,12 +313,18 @@
                                     autocomplete="off"
                                     spellcheck="false"
                                 />
-                                <button type="button" id="open-url-import-btn" class="url-import-trigger" title="Import from ICA / Willys link">
+                                <button
+                                    type="button"
+                                    id="open-url-import-btn"
+                                    class="url-import-trigger"
+                                    title="Import from ICA / Willys link"
+                                >
                                     🔗 Import URL
                                 </button>
                             </div>
                             <div id="first-time-hint" class="input-inline-hint">
-                                <span class="hint-dot"></span> Try typing <span class="hint-sample">chicken</span> or <span class="hint-sample">potato</span>
+                                <span class="hint-dot"></span> Try typing <span class="hint-sample">chicken</span> or
+                                <span class="hint-sample">potato</span>
                             </div>
                             <div id="food-dropdown" class="food-dropdown hidden">
                                 <ul id="food-dropdown-list" class="food-dropdown-list"></ul>
@@ -275,31 +334,65 @@
                         <!-- Step 2: Quantity -->
                         <div id="food-step-quantity" class="food-input-step hidden">
                             <div class="quantity-input-wrapper">
-                                <button type="button" class="selected-food-pill" id="cancel-food-selection" title="Change selected food">
+                                <button
+                                    type="button"
+                                    class="selected-food-pill"
+                                    id="cancel-food-selection"
+                                    title="Change selected food"
+                                >
                                     <span id="selected-food-name">Chicken</span>
                                     <span class="pill-remove-icon">&times;</span>
                                 </button>
 
                                 <div class="amount-field-container">
-                                    <input type="number" id="food-amount-input" placeholder="Qty" autocomplete="off" step="any" />
+                                    <input
+                                        type="number"
+                                        id="food-amount-input"
+                                        placeholder="Qty"
+                                        autocomplete="off"
+                                        step="any"
+                                    />
                                     <div id="amount-dropdown" class="amount-dropdown hidden">
                                         <ul id="amount-dropdown-list" class="amount-dropdown-list"></ul>
                                     </div>
                                 </div>
 
                                 <div class="unit-dropdown-container">
-                                    <button type="button" id="unit-trigger-btn" class="unit-trigger-btn" title="Change unit">
+                                    <button
+                                        type="button"
+                                        id="unit-trigger-btn"
+                                        class="unit-trigger-btn"
+                                        title="Change unit"
+                                    >
                                         <span id="current-unit-label">g</span>
-                                        <svg class="unit-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <svg
+                                            class="unit-chevron"
+                                            width="10"
+                                            height="10"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2.5"
+                                        >
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </button>
                                     <div id="unit-menu" class="unit-menu hidden">
-                                        <button type="button" class="unit-opt active" data-unit="g"><strong>g</strong> <small>grams</small></button>
-                                        <button type="button" class="unit-opt" data-unit="kg"><strong>kg</strong> <small>kilograms</small></button>
-                                        <button type="button" class="unit-opt" data-unit="mg"><strong>mg</strong> <small>milligrams</small></button>
-                                        <button type="button" class="unit-opt" data-unit="oz"><strong>oz</strong> <small>ounces</small></button>
-                                        <button type="button" class="unit-opt" data-unit="lbs"><strong>lbs</strong> <small>pounds</small></button>
+                                        <button type="button" class="unit-opt active" data-unit="g">
+                                            <strong>g</strong> <small>grams</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="kg">
+                                            <strong>kg</strong> <small>kilograms</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="mg">
+                                            <strong>mg</strong> <small>milligrams</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="oz">
+                                            <strong>oz</strong> <small>ounces</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="lbs">
+                                            <strong>lbs</strong> <small>pounds</small>
+                                        </button>
                                     </div>
                                 </div>
 
@@ -331,12 +424,18 @@
                     <div class="card input-card" id="slot-1-card">
                         <div class="slot-header">
                             <span class="slot-badge" style="background-color: #0072b2">Item A</span>
-                            <button class="clear-slot-btn" id="clear-slot-1-btn" title="Clear Slot A" type="button">&times;</button>
+                            <button class="clear-slot-btn" id="clear-slot-1-btn" title="Clear Slot A" type="button">
+                                &times;
+                            </button>
                         </div>
                         <div class="color-picker-wrapper">
                             <label>Accent</label>
                             <div class="color-options" data-slot="1">
-                                <span class="color-dot active" style="background-color: #0072b2" data-color="#0072b2"></span>
+                                <span
+                                    class="color-dot active"
+                                    style="background-color: #0072b2"
+                                    data-color="#0072b2"
+                                ></span>
                                 <span class="color-dot" style="background-color: #332288" data-color="#332288"></span>
                                 <span class="color-dot" style="background-color: #009988" data-color="#009988"></span>
                                 <span class="color-dot" style="background-color: #aa3377" data-color="#aa3377"></span>
@@ -345,11 +444,24 @@
 
                         <div id="slot-1-step-search" class="food-input-step">
                             <div class="search-input-wrapper">
-                                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg
+                                    class="search-icon"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
                                     <circle cx="11" cy="11" r="8"></circle>
                                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                 </svg>
-                                <input type="text" id="slot-1-search-input" placeholder="Search Item A..." autocomplete="off" />
+                                <input
+                                    type="text"
+                                    id="slot-1-search-input"
+                                    placeholder="Search Item A..."
+                                    autocomplete="off"
+                                />
                             </div>
                             <div id="slot-1-dropdown" class="food-dropdown hidden">
                                 <ul id="slot-1-dropdown-list" class="food-dropdown-list"></ul>
@@ -363,7 +475,13 @@
                                     <span class="pill-remove-icon">&times;</span>
                                 </button>
                                 <div class="amount-field-container">
-                                    <input type="number" id="slot-1-amount-input" placeholder="Qty" autocomplete="off" step="any" />
+                                    <input
+                                        type="number"
+                                        id="slot-1-amount-input"
+                                        placeholder="Qty"
+                                        autocomplete="off"
+                                        step="any"
+                                    />
                                     <div id="slot-1-amount-dropdown" class="amount-dropdown hidden">
                                         <ul id="slot-1-amount-dropdown-list" class="amount-dropdown-list"></ul>
                                     </div>
@@ -371,16 +489,34 @@
                                 <div class="unit-dropdown-container">
                                     <button type="button" id="slot-1-unit-btn" class="unit-trigger-btn">
                                         <span id="slot-1-unit-label">g</span>
-                                        <svg class="unit-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <svg
+                                            class="unit-chevron"
+                                            width="10"
+                                            height="10"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2.5"
+                                        >
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </button>
                                     <div id="slot-1-unit-menu" class="unit-menu hidden">
-                                        <button type="button" class="unit-opt active" data-unit="g"><strong>g</strong> <small>grams</small></button>
-                                        <button type="button" class="unit-opt" data-unit="kg"><strong>kg</strong> <small>kilograms</small></button>
-                                        <button type="button" class="unit-opt" data-unit="mg"><strong>mg</strong> <small>milligrams</small></button>
-                                        <button type="button" class="unit-opt" data-unit="oz"><strong>oz</strong> <small>ounces</small></button>
-                                        <button type="button" class="unit-opt" data-unit="lbs"><strong>lbs</strong> <small>pounds</small></button>
+                                        <button type="button" class="unit-opt active" data-unit="g">
+                                            <strong>g</strong> <small>grams</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="kg">
+                                            <strong>kg</strong> <small>kilograms</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="mg">
+                                            <strong>mg</strong> <small>milligrams</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="oz">
+                                            <strong>oz</strong> <small>ounces</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="lbs">
+                                            <strong>lbs</strong> <small>pounds</small>
+                                        </button>
                                     </div>
                                 </div>
                                 <button type="button" id="slot-1-confirm-btn" class="add-submit-btn">Set</button>
@@ -393,12 +529,18 @@
                     <div class="card diet-card" id="slot-2-card">
                         <div class="slot-header">
                             <span class="slot-badge" style="background-color: #e69f00">Item B</span>
-                            <button class="clear-slot-btn" id="clear-slot-2-btn" title="Clear Slot B" type="button">&times;</button>
+                            <button class="clear-slot-btn" id="clear-slot-2-btn" title="Clear Slot B" type="button">
+                                &times;
+                            </button>
                         </div>
                         <div class="color-picker-wrapper">
                             <label>Accent</label>
                             <div class="color-options" data-slot="2">
-                                <span class="color-dot active" style="background-color: #e69f00" data-color="#e69f00"></span>
+                                <span
+                                    class="color-dot active"
+                                    style="background-color: #e69f00"
+                                    data-color="#e69f00"
+                                ></span>
                                 <span class="color-dot" style="background-color: #ee7733" data-color="#ee7733"></span>
                                 <span class="color-dot" style="background-color: #228833" data-color="#228833"></span>
                                 <span class="color-dot" style="background-color: #cc3311" data-color="#cc3311"></span>
@@ -407,11 +549,24 @@
 
                         <div id="slot-2-step-search" class="food-input-step">
                             <div class="search-input-wrapper">
-                                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg
+                                    class="search-icon"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
                                     <circle cx="11" cy="11" r="8"></circle>
                                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                 </svg>
-                                <input type="text" id="slot-2-search-input" placeholder="Search Item B..." autocomplete="off" />
+                                <input
+                                    type="text"
+                                    id="slot-2-search-input"
+                                    placeholder="Search Item B..."
+                                    autocomplete="off"
+                                />
                             </div>
                             <div id="slot-2-dropdown" class="food-dropdown hidden">
                                 <ul id="slot-2-dropdown-list" class="food-dropdown-list"></ul>
@@ -425,7 +580,13 @@
                                     <span class="pill-remove-icon">&times;</span>
                                 </button>
                                 <div class="amount-field-container">
-                                    <input type="number" id="slot-2-amount-input" placeholder="Qty" autocomplete="off" step="any" />
+                                    <input
+                                        type="number"
+                                        id="slot-2-amount-input"
+                                        placeholder="Qty"
+                                        autocomplete="off"
+                                        step="any"
+                                    />
                                     <div id="slot-2-amount-dropdown" class="amount-dropdown hidden">
                                         <ul id="slot-2-amount-dropdown-list" class="amount-dropdown-list"></ul>
                                     </div>
@@ -433,16 +594,34 @@
                                 <div class="unit-dropdown-container">
                                     <button type="button" id="slot-2-unit-btn" class="unit-trigger-btn">
                                         <span id="slot-2-unit-label">g</span>
-                                        <svg class="unit-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <svg
+                                            class="unit-chevron"
+                                            width="10"
+                                            height="10"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2.5"
+                                        >
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </button>
                                     <div id="slot-2-unit-menu" class="unit-menu hidden">
-                                        <button type="button" class="unit-opt active" data-unit="g"><strong>g</strong> <small>grams</small></button>
-                                        <button type="button" class="unit-opt" data-unit="kg"><strong>kg</strong> <small>kilograms</small></button>
-                                        <button type="button" class="unit-opt" data-unit="mg"><strong>mg</strong> <small>milligrams</small></button>
-                                        <button type="button" class="unit-opt" data-unit="oz"><strong>oz</strong> <small>ounces</small></button>
-                                        <button type="button" class="unit-opt" data-unit="lbs"><strong>lbs</strong> <small>pounds</small></button>
+                                        <button type="button" class="unit-opt active" data-unit="g">
+                                            <strong>g</strong> <small>grams</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="kg">
+                                            <strong>kg</strong> <small>kilograms</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="mg">
+                                            <strong>mg</strong> <small>milligrams</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="oz">
+                                            <strong>oz</strong> <small>ounces</small>
+                                        </button>
+                                        <button type="button" class="unit-opt" data-unit="lbs">
+                                            <strong>lbs</strong> <small>pounds</small>
+                                        </button>
                                     </div>
                                 </div>
                                 <button type="button" id="slot-2-confirm-btn" class="add-submit-btn">Set</button>
@@ -471,8 +650,16 @@
                             <div class="ring-widget">
                                 <div class="ring-svg-container">
                                     <svg viewBox="0 0 36 36" class="circular-ring">
-                                        <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path id="ring-energy-fill" class="ring-fill energy-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path
+                                            class="ring-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path
+                                            id="ring-energy-fill"
+                                            class="ring-fill energy-fill"
+                                            stroke-dasharray="0, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
                                     </svg>
                                     <div class="ring-center-text">
                                         <span class="ring-val" id="ring-energy-val">0</span>
@@ -486,8 +673,16 @@
                             <div class="ring-widget">
                                 <div class="ring-svg-container">
                                     <svg viewBox="0 0 36 36" class="circular-ring">
-                                        <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path id="ring-target-fill" class="ring-fill target-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path
+                                            class="ring-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path
+                                            id="ring-target-fill"
+                                            class="ring-fill target-fill"
+                                            stroke-dasharray="0, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
                                     </svg>
                                     <div class="ring-center-text">
                                         <span class="ring-val" id="ring-target-pct">0%</span>
@@ -501,8 +696,16 @@
                             <div class="ring-widget">
                                 <div class="ring-svg-container">
                                     <svg viewBox="0 0 36 36" class="circular-ring">
-                                        <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path id="ring-remaining-fill" class="ring-fill remaining-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path
+                                            class="ring-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path
+                                            id="ring-remaining-fill"
+                                            class="ring-fill remaining-fill"
+                                            stroke-dasharray="0, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
                                     </svg>
                                     <div class="ring-center-text">
                                         <span class="ring-val" id="ring-remaining-val">2000</span>
@@ -517,7 +720,16 @@
                         <div class="water-tracker-card">
                             <div class="water-header">
                                 <div class="water-title-group">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg
+                                        width="13"
+                                        height="13"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#0284c7"
+                                        stroke-width="2.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
                                         <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
                                     </svg>
                                     <span class="water-title">Water Intake</span>
@@ -525,16 +737,34 @@
                                 <div class="water-vol-text" id="water-vol-text">0.00 L / 0.0 fl oz</div>
                             </div>
                             <div class="water-glasses-row">
-                                <button type="button" id="water-minus-btn" class="water-btn" title="Remove glass">−</button>
+                                <button type="button" id="water-minus-btn" class="water-btn" title="Remove glass">
+                                    −
+                                </button>
                                 <div class="glasses-container" id="glasses-container">
-                                    <button type="button" class="glass-btn" data-idx="0"><span class="glass-fill-bar"></span></button>
-                                    <button type="button" class="glass-btn" data-idx="1"><span class="glass-fill-bar"></span></button>
-                                    <button type="button" class="glass-btn" data-idx="2"><span class="glass-fill-bar"></span></button>
-                                    <button type="button" class="glass-btn" data-idx="3"><span class="glass-fill-bar"></span></button>
-                                    <button type="button" class="glass-btn" data-idx="4"><span class="glass-fill-bar"></span></button>
-                                    <button type="button" class="glass-btn" data-idx="5"><span class="glass-fill-bar"></span></button>
-                                    <button type="button" class="glass-btn" data-idx="6"><span class="glass-fill-bar"></span></button>
-                                    <button type="button" class="glass-btn" data-idx="7"><span class="glass-fill-bar"></span></button>
+                                    <button type="button" class="glass-btn" data-idx="0">
+                                        <span class="glass-fill-bar"></span>
+                                    </button>
+                                    <button type="button" class="glass-btn" data-idx="1">
+                                        <span class="glass-fill-bar"></span>
+                                    </button>
+                                    <button type="button" class="glass-btn" data-idx="2">
+                                        <span class="glass-fill-bar"></span>
+                                    </button>
+                                    <button type="button" class="glass-btn" data-idx="3">
+                                        <span class="glass-fill-bar"></span>
+                                    </button>
+                                    <button type="button" class="glass-btn" data-idx="4">
+                                        <span class="glass-fill-bar"></span>
+                                    </button>
+                                    <button type="button" class="glass-btn" data-idx="5">
+                                        <span class="glass-fill-bar"></span>
+                                    </button>
+                                    <button type="button" class="glass-btn" data-idx="6">
+                                        <span class="glass-fill-bar"></span>
+                                    </button>
+                                    <button type="button" class="glass-btn" data-idx="7">
+                                        <span class="glass-fill-bar"></span>
+                                    </button>
                                 </div>
                                 <button type="button" id="water-plus-btn" class="water-btn" title="Add glass">+</button>
                             </div>
@@ -605,13 +835,20 @@
                     <img src="./logo.webp" alt="Logo" class="footer-logo" />
                     <span class="footer-title">Open <span class="footer-title-green">Nutrition</span></span>
                     <span class="footer-sep">•</span>
-                    <span class="footer-author">by <a href="https://adamnordling.se/" target="_blank" rel="noopener noreferrer">Adam Nordling</a></span>
+                    <span class="footer-author"
+                        >by
+                        <a href="https://adamnordling.se/" target="_blank" rel="noopener noreferrer"
+                            >Adam Nordling</a
+                        ></span
+                    >
                 </div>
                 <div class="footer-center">
                     <span>© <span id="footer-year">2026</span> Open Nutrition</span>
                 </div>
                 <div class="footer-links">
-                    <a href="https://github.com/adamnordling/open_nutrition" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/adamnordling/open_nutrition" target="_blank" rel="noopener noreferrer"
+                        >GitHub</a
+                    >
                     <a href="https://adamnordling.se/" target="_blank" rel="noopener noreferrer">Portfolio</a>
                     <a href="#top" id="footer-scroll-top">Top ↑</a>
                 </div>
@@ -621,7 +858,7 @@
         <!-- Modals Backdrop -->
         <div id="app-modal-backdrop" class="app-modal-backdrop hidden">
             <!-- URL / Text Import Modal -->
-            <div id="url-import-modal" class="app-modal-card hidden" style="max-width: 480px;">
+            <div id="url-import-modal" class="app-modal-card hidden" style="max-width: 480px">
                 <div class="modal-header">
                     <h4>Import Product</h4>
                     <button type="button" class="modal-close-btn" data-close-modal>&times;</button>
@@ -634,25 +871,40 @@
 
                 <div id="import-url-section" class="hidden">
                     <p class="modal-desc">Paste grocery URL (Willys, ICA, etc.):</p>
-                    <div style="display: flex; gap: 6px; margin-bottom: 6px;">
+                    <div style="display: flex; gap: 6px; margin-bottom: 6px">
                         <input type="url" id="import-url-input" class="modal-input" placeholder="https://..." />
-                        <button type="button" id="fetch-url-btn" class="modal-btn-primary" style="white-space: nowrap;">Fetch</button>
+                        <button type="button" id="fetch-url-btn" class="modal-btn-primary" style="white-space: nowrap">
+                            Fetch
+                        </button>
                     </div>
                     <div id="bot-blocked-warning" class="bot-blocked-box hidden">
-                        ⚠️ <strong>Anti-bot shield blocked automatic scraping.</strong><br>
+                        ⚠️ <strong>Anti-bot shield blocked automatic scraping.</strong><br />
                         Please use the <strong>"Paste Text"</strong> tab instead.
                     </div>
                 </div>
 
                 <div id="import-text-section">
                     <p class="modal-desc">Paste copied product text (Title, ingredients, and/or nutrition):</p>
-                    <textarea id="import-text-input" class="modal-input" rows="5" style="height: 110px; resize: vertical; font-size: 11px; padding: 8px;" placeholder="Paste text here..."></textarea>
-                    <button type="button" id="parse-text-btn" class="modal-btn-primary" style="width: 100%; margin-top: 8px;">Parse Product</button>
+                    <textarea
+                        id="import-text-input"
+                        class="modal-input"
+                        rows="5"
+                        style="height: 110px; resize: vertical; font-size: 11px; padding: 8px"
+                        placeholder="Paste text here..."
+                    ></textarea>
+                    <button
+                        type="button"
+                        id="parse-text-btn"
+                        class="modal-btn-primary"
+                        style="width: 100%; margin-top: 8px"
+                    >
+                        Parse Product
+                    </button>
                 </div>
 
-                <div id="import-preview-box" class="import-preview-box hidden" style="margin-top: 10px;">
-                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                        <h5 id="import-preview-title" class="preview-title" style="font-size: 13px;"></h5>
+                <div id="import-preview-box" class="import-preview-box hidden" style="margin-top: 10px">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline">
+                        <h5 id="import-preview-title" class="preview-title" style="font-size: 13px"></h5>
                         <span id="import-matched-badge" class="badge-matched hidden"></span>
                     </div>
 
@@ -662,17 +914,26 @@
                     </div>
 
                     <div class="import-qty-row">
-                        <label for="import-amount-input" style="font-size: 12px; font-weight: 600;">Portion Weight:</label>
-                        <div style="display: flex; align-items: center; gap: 6px;">
-                            <input type="number" id="import-amount-input" class="modal-input" value="100" style="width: 80px;" min="1" />
-                            <span style="font-weight: 700; font-size: 12px;">g</span>
+                        <label for="import-amount-input" style="font-size: 12px; font-weight: 600"
+                            >Portion Weight:</label
+                        >
+                        <div style="display: flex; align-items: center; gap: 6px">
+                            <input
+                                type="number"
+                                id="import-amount-input"
+                                class="modal-input"
+                                value="100"
+                                style="width: 80px"
+                                min="1"
+                            />
+                            <span style="font-weight: 700; font-size: 12px">g</span>
                         </div>
                     </div>
 
                     <div class="preview-macros-row" id="import-preview-macros"></div>
                 </div>
 
-                <div class="modal-actions" style="margin-top: 12px;">
+                <div class="modal-actions" style="margin-top: 12px">
                     <button type="button" class="modal-btn-subtle" data-close-modal>Cancel</button>
                     <button type="button" id="confirm-import-btn" class="modal-btn-primary" disabled>Add to Log</button>
                 </div>
@@ -685,7 +946,13 @@
                     <button type="button" class="modal-close-btn" data-close-modal>&times;</button>
                 </div>
                 <p class="modal-desc">Give your Monday–Sunday nutritional plan a recognizable name.</p>
-                <input type="text" id="plan-name-input" class="modal-input" placeholder="e.g. My Clean Bulk Week" maxlength="40" />
+                <input
+                    type="text"
+                    id="plan-name-input"
+                    class="modal-input"
+                    placeholder="e.g. My Clean Bulk Week"
+                    maxlength="40"
+                />
                 <div class="modal-actions">
                     <button type="button" class="modal-btn-subtle" data-close-modal>Cancel</button>
                     <button type="button" id="confirm-save-plan-btn" class="modal-btn-primary">Save Plan</button>

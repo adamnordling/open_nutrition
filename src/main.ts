@@ -15,7 +15,9 @@ export function showToast(message: string): void {
     if (!toast) return;
     toast.textContent = message;
     toast.classList.remove('hidden');
-    setTimeout(() => toast.classList.add('hidden'), 2500);
+    setTimeout(() => {
+        toast.classList.add('hidden');
+    }, 2500);
 }
 
 // 1. Modals Backdrops & Close
@@ -31,7 +33,9 @@ function closeModal(): void {
     document.getElementById('url-import-modal')?.classList.add('hidden');
 }
 
-document.querySelectorAll('[data-close-modal]').forEach(b => b.addEventListener('click', closeModal));
+document.querySelectorAll('[data-close-modal]').forEach(b => {
+    b.addEventListener('click', closeModal);
+});
 modalBackdrop?.addEventListener('click', e => {
     if (e.target === modalBackdrop) closeModal();
 });
@@ -64,7 +68,10 @@ document.addEventListener('keydown', e => {
 
 document.getElementById('menu-btn-clear')?.addEventListener('click', () => {
     const day = getCurrentDayData();
-    if (day.unassigned.length === 0 && day.meals.length === 0) return closeNav();
+    if (day.unassigned.length === 0 && day.meals.length === 0) {
+        closeNav();
+        return;
+    }
     day.unassigned = [];
     day.meals = [];
     state.selectedMealId = null;
@@ -84,7 +91,9 @@ document.getElementById('menu-btn-profile')?.addEventListener('click', () => {
 // 3. Day Tabs
 document.querySelectorAll('.day-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.day-btn').forEach(b => {
+            b.classList.remove('active');
+        });
         btn.classList.add('active');
         const dayAttr = btn.getAttribute('data-day') as DayOfWeek | null;
         if (dayAttr) state.currentDay = dayAttr;
@@ -109,11 +118,15 @@ document.getElementById('add-meal-btn')?.addEventListener('click', () => {
 
 document.getElementById('copy-prev-day-btn')?.addEventListener('click', () => {
     const idx = DAYS.indexOf(state.currentDay);
-    if (idx === 0) return alert('No previous day for Monday!');
+    if (idx === 0) {
+        alert('No previous day for Monday!');
+        return;
+    }
     const prevDay = state.weekData[DAYS[idx - 1]];
 
     if (!prevDay || (prevDay.unassigned.length === 0 && prevDay.meals.length === 0)) {
-        return alert(`No meals found on ${DAYS[idx - 1]} to copy.`);
+        alert(`No meals found on ${DAYS[idx - 1]} to copy.`);
+        return;
     }
 
     state.weekData[state.currentDay] = JSON.parse(JSON.stringify(prevDay));
@@ -134,7 +147,10 @@ document.getElementById('save-week-btn')?.addEventListener('click', () => {
 
 document.getElementById('confirm-save-plan-btn')?.addEventListener('click', () => {
     const name = planNameInput?.value.trim() || `Plan ${Date.now()}`;
-    const allPlans = JSON.parse(localStorage.getItem('open_nutrition_saved_weeks') || '{}') as Record<string, SavedPlan>;
+    const allPlans = JSON.parse(localStorage.getItem('open_nutrition_saved_weeks') || '{}') as Record<
+        string,
+        SavedPlan
+    >;
 
     allPlans[name] = {
         name,
@@ -152,7 +168,10 @@ function renderSavedPlansList(): void {
     if (!listEl) return;
     listEl.innerHTML = '';
 
-    const allPlans = JSON.parse(localStorage.getItem('open_nutrition_saved_weeks') || '{}') as Record<string, SavedPlan>;
+    const allPlans = JSON.parse(localStorage.getItem('open_nutrition_saved_weeks') || '{}') as Record<
+        string,
+        SavedPlan
+    >;
     const names = Object.keys(allPlans);
 
     if (names.length === 0) {

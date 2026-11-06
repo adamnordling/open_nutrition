@@ -185,7 +185,9 @@
         padding: 4px;
     }
 
-    .food-dropdown-list { list-style: none; }
+    .food-dropdown-list {
+        list-style: none;
+    }
 
     .food-dropdown-item {
         display: flex;
@@ -242,7 +244,9 @@
         transition: all 0.15s ease;
     }
 
-    .selected-food-pill:hover { background: #d1fae5; }
+    .selected-food-pill:hover {
+        background: #d1fae5;
+    }
 
     .selected-food-pill span#selected-food-name {
         overflow: hidden;
@@ -300,7 +304,9 @@
         padding: 4px;
     }
 
-    .amount-dropdown-list { list-style: none; }
+    .amount-dropdown-list {
+        list-style: none;
+    }
 
     .amount-preset-item {
         padding: 6px 10px;
@@ -339,7 +345,9 @@
         gap: 4px;
     }
 
-    .unit-trigger-btn:hover { background: #e2e8f0; }
+    .unit-trigger-btn:hover {
+        background: #e2e8f0;
+    }
 
     .unit-menu {
         position: absolute;
@@ -372,7 +380,9 @@
         width: 100%;
     }
 
-    .unit-opt:hover { background: #f1f5f9; }
+    .unit-opt:hover {
+        background: #f1f5f9;
+    }
 
     .unit-opt.active {
         background: var(--primary-light);
@@ -393,7 +403,9 @@
         transition: background 0.15s ease;
     }
 
-    .add-submit-btn:hover { background: var(--primary-hover); }
+    .add-submit-btn:hover {
+        background: var(--primary-hover);
+    }
 
     /* Meal & Diet Items */
     .diet-list-wrapper {
@@ -416,10 +428,14 @@
         border: 1px solid transparent;
         border-radius: 6px;
         cursor: pointer;
-        transition: background 0.12s ease, border-color 0.12s ease;
+        transition:
+            background 0.12s ease,
+            border-color 0.12s ease;
     }
 
-    .diet-item:hover { background-color: #f8fafc; }
+    .diet-item:hover {
+        background-color: #f8fafc;
+    }
     .diet-item.selected {
         background-color: var(--primary-light) !important;
         border-color: var(--primary-border) !important;
@@ -516,7 +532,9 @@
         font-size: 14px;
     }
 
-    .meal-delete-btn:hover { color: var(--danger-color); }
+    .meal-delete-btn:hover {
+        color: var(--danger-color);
+    }
 
     .quick-log-card {
         background: #ffffff;
@@ -607,7 +625,9 @@
         padding: 0 4px;
     }
 
-    .close-insight-btn:hover { color: var(--text-color); }
+    .close-insight-btn:hover {
+        color: var(--text-color);
+    }
 
     .insight-family {
         font-size: 11px;
@@ -652,9 +672,15 @@
         letter-spacing: 0.3px;
     }
 
-    .label-superpower { color: #059669; }
-    .label-nuance { color: #dc2626; }
-    .label-prep { color: #2563eb; }
+    .label-superpower {
+        color: #059669;
+    }
+    .label-nuance {
+        color: #dc2626;
+    }
+    .label-prep {
+        color: #2563eb;
+    }
 
     .insight-block p {
         font-size: 11px;
@@ -717,7 +743,9 @@
         line-height: 1;
     }
 
-    .modal-close-btn:hover { color: var(--text-color); }
+    .modal-close-btn:hover {
+        color: var(--text-color);
+    }
 
     .modal-desc {
         font-size: 12px;
@@ -769,7 +797,9 @@
         cursor: pointer;
     }
 
-    .modal-btn-primary:hover { background: var(--primary-hover); }
+    .modal-btn-primary:hover {
+        background: var(--primary-hover);
+    }
 
     .saved-plans-list {
         display: flex;
@@ -824,7 +854,9 @@
         font-size: 15px;
     }
 
-    .plan-del-btn:hover { color: var(--danger-color); }
+    .plan-del-btn:hover {
+        color: var(--danger-color);
+    }
 
     .app-toast {
         position: fixed;

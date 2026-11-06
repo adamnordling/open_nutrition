@@ -189,9 +189,15 @@
         background-color: #f8fafc;
     }
 
-    .nutrient-row.indent-1.clickable-row { padding-left: 14px; }
-    .nutrient-row.indent-2.clickable-row { padding-left: 26px; }
-    .nutrient-row.indent-3.clickable-row { padding-left: 38px; }
+    .nutrient-row.indent-1.clickable-row {
+        padding-left: 14px;
+    }
+    .nutrient-row.indent-2.clickable-row {
+        padding-left: 26px;
+    }
+    .nutrient-row.indent-3.clickable-row {
+        padding-left: 38px;
+    }
 
     .nutrient-row.indent-1 .nutrient-info span:first-child::before {
         content: '↳ ';
@@ -269,10 +275,18 @@
         transition: width 0.3s ease;
     }
 
-    .rda-bar.exceeded { background-color: var(--info-color); }
-    .rda-bar.over-limit { background-color: var(--warning-color) !important; }
-    .rda-bar.limit-under { background-color: #fecaca !important; }
-    .rda-bar.limit-over { background-color: var(--danger-color) !important; }
+    .rda-bar.exceeded {
+        background-color: var(--info-color);
+    }
+    .rda-bar.over-limit {
+        background-color: var(--warning-color) !important;
+    }
+    .rda-bar.limit-under {
+        background-color: #fecaca !important;
+    }
+    .rda-bar.limit-over {
+        background-color: var(--danger-color) !important;
+    }
 
     .percentage-label {
         font-size: 10px;
@@ -284,7 +298,9 @@
         font-family: var(--font-mono);
     }
 
-    .percentage-label.over-limit-text { color: #ea580c !important; }
+    .percentage-label.over-limit-text {
+        color: #ea580c !important;
+    }
 
     .rda-bar.unabsorbed {
         opacity: 0.35 !important;
@@ -319,7 +335,9 @@
         text-align: right;
     }
 
-    .no-target-val { color: var(--text-muted); }
+    .no-target-val {
+        color: var(--text-muted);
+    }
 
     /* Analysis Drawer */
     .nutrient-details-panel {
@@ -355,7 +373,9 @@
         margin-top: 12px;
     }
 
-    .sources-container.single-column { grid-template-columns: 1fr; }
+    .sources-container.single-column {
+        grid-template-columns: 1fr;
+    }
 
     .sources-list {
         background: #ffffff;

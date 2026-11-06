@@ -59,7 +59,8 @@ export function renderSummaryDashboard(activeData: AggregatedNutrients): void {
     const waterVol = document.getElementById('water-vol-text');
     const waterBar = document.getElementById('water-progress-bar');
 
-    if (waterVol) waterVol.textContent = `${(totalWaterMl / 1000).toFixed(2)} L / ${(totalWaterMl * 0.033814).toFixed(1)} fl oz`;
+    if (waterVol)
+        waterVol.textContent = `${(totalWaterMl / 1000).toFixed(2)} L / ${(totalWaterMl * 0.033814).toFixed(1)} fl oz`;
     if (waterBar) waterBar.style.width = `${Math.min(100, Math.round((totalWaterMl / 2500) * 100))}%`;
 
     // Macro Bar Updater

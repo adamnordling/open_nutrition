@@ -10,7 +10,8 @@ export const chicken: SparseFoodProfile = {
         superpower:
             'One of the highest DIAAS protein scores (>1.2) known. Exceptionally dense in branched-chain amino acids (leucine), creatine, and carnosine with negligible intramuscular lipid.',
         nuance: 'Muscle vs. Bone & Collagen Myth: Boneless/skinless breast is pure muscle meat, high in methionine but nearly devoid of glycine and proline. Pair with glycine/collagen sources to balance methylation.',
-        prepTip: 'Cooking bone-in leaches collagen into the meat. If eating skinless breast daily, pair with bone broth.'
+        prepTip:
+            'Cooking bone-in leaches collagen into the meat. If eating skinless breast daily, pair with bone broth.'
     },
     general: { Calories: 165, Water: 65, Ash: 1.0 },
     lipids: {

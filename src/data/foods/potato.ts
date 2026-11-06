@@ -10,7 +10,8 @@ export const potato: SparseFoodProfile = {
         superpower:
             "Ranked #1 on Holt's Clinical Satiety Index—providing the highest fullness-to-calorie ratio of any tested whole food.",
         nuance: 'Nightshades contain glycoalkaloids. Always peel and never eat greenish-tinted potatoes.',
-        prepTip: 'Cooling boiled potatoes in the fridge for 12h retrogrades digestible starch into Type-3 Resistant Starch (RS3).'
+        prepTip:
+            'Cooling boiled potatoes in the fridge for 12h retrogrades digestible starch into Type-3 Resistant Starch (RS3).'
     },
     general: { Calories: 77, Water: 79, Ash: 1.1 },
     organic_acids: { 'Citric Acid': 320, 'Malic Acid': 90, 'Succinic Acid': 12, 'Salicylic Acid': 0.1 },

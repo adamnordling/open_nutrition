@@ -27,8 +27,8 @@ function setupComparisonSlot(slotIndex: number): void {
     const num = slotIndex + 1;
     let slotFoodKey: string | null = null;
     let slotUnit: UnitKey = 'g';
-    let highlightedIndex = -1;
-    let highlightedAmount = -1;
+    const highlightedIndex = -1;
+    const highlightedAmount = -1;
 
     const searchStep = document.getElementById(`slot-${num}-step-search`);
     const qtyStep = document.getElementById(`slot-${num}-step-quantity`);
@@ -53,7 +53,10 @@ function setupComparisonSlot(slotIndex: number): void {
         const filtered = Object.keys(FOOD_DATABASE)
             .map(k => ({ key: k, ...FOOD_DATABASE[k] }))
             .filter(
-                f => !query || f.displayName.toLowerCase().includes(query) || f.aliases.some(a => a.toLowerCase().includes(query))
+                f =>
+                    !query ||
+                    f.displayName.toLowerCase().includes(query) ||
+                    f.aliases.some(a => a.toLowerCase().includes(query))
             )
             .slice(0, 10);
 
@@ -179,7 +182,9 @@ export function initComparisonMode(): void {
         const slotIndex = parseInt(optionsContainer.getAttribute('data-slot') ?? '1', 10) - 1;
         optionsContainer.querySelectorAll<HTMLElement>('.color-dot').forEach(dot => {
             dot.addEventListener('click', () => {
-                optionsContainer.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+                optionsContainer.querySelectorAll('.color-dot').forEach(d => {
+                    d.classList.remove('active');
+                });
                 dot.classList.add('active');
                 state.compareSlots[slotIndex].color = dot.getAttribute('data-color') ?? '#0072b2';
                 updateSlotUI(slotIndex);

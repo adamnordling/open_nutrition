@@ -4,7 +4,12 @@ import { NUTRIENT_UNITS } from '../config/units.js';
 import { RDA_TARGETS, UL_TARGETS } from '../config/targets.js';
 import { leftColumnLayout, rightColumnLayout, CATEGORY_NAMES, CATEGORY_ICONS } from '../config/layout.js';
 import { state } from '../state/store.js';
-import { calculateAggregate, getActiveContext, getCategoryProgress, type AggregatedNutrients } from '../services/calculations.js';
+import {
+    calculateAggregate,
+    getActiveContext,
+    getCategoryProgress,
+    type AggregatedNutrients
+} from '../services/calculations.js';
 import { NUTRIENT_ANALYTICS } from '../config/analytics.js';
 import { renderSummaryDashboard } from './summaryDashboard.js';
 
@@ -17,7 +22,7 @@ interface CompareAggregate {
 type ActivePanelData = AggregatedNutrients | CompareAggregate;
 
 function isCompareData(data: ActivePanelData): data is CompareAggregate {
-    return (data as CompareAggregate).isCompare === true;
+    return (data as CompareAggregate).isCompare;
 }
 
 function createRdaUlMeter(
@@ -443,7 +448,7 @@ export function createCategoryCard(category: CategoryKey, activeData: ActivePane
         state.collapsedCategories[category] = !isCollapsed;
 
         const allCategories = [...leftColumnLayout, ...rightColumnLayout];
-        state.allCollapsed = allCategories.every(cat => state.collapsedCategories[cat] === true);
+        state.allCollapsed = allCategories.every(cat => state.collapsedCategories[cat]);
         renderNutritionPanel();
     });
 

@@ -5,7 +5,10 @@ import { createFood, FOOD_DATABASE } from '../data/index.js';
 function parseSwedishFloat(val: unknown): number {
     if (typeof val === 'number') return val;
     if (!val) return 0;
-    const cleaned = String(val).replace(/\s/g, '').replace(',', '.').replace(/[^0-9.]/g, '');
+    const cleaned = String(val)
+        .replace(/\s/g, '')
+        .replace(',', '.')
+        .replace(/[^0-9.]/g, '');
     const num = parseFloat(cleaned);
     return isNaN(num) ? 0 : num;
 }
@@ -74,7 +77,10 @@ function findMatchingBaseFood(title: string, ingredients: ParsedIngredient[]): F
 }
 
 export function extractProductFromText(rawInput: string, sourceHint = ''): ExtractedProduct {
-    const lines = rawInput.split('\n').map(l => l.trim()).filter(Boolean);
+    const lines = rawInput
+        .split('\n')
+        .map(l => l.trim())
+        .filter(Boolean);
     let title = '';
 
     if (lines.length > 0 && !/^(ingredienser|näringsvärde|näringsdeklaration)/i.test(lines[0])) {
@@ -103,7 +109,10 @@ export function extractProductFromText(rawInput: string, sourceHint = ''): Extra
         },
         general: {
             Calories: nutrition.Calories,
-            Water: Math.max(0, 100 - (nutrition.Protein + nutrition.Fat + nutrition.Carbs + nutrition.Fiber + nutrition.Salt))
+            Water: Math.max(
+                0,
+                100 - (nutrition.Protein + nutrition.Fat + nutrition.Carbs + nutrition.Fiber + nutrition.Salt)
+            )
         },
         carbohydrates: {
             'Total Carbohydrates': nutrition.Carbs,
