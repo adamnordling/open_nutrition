@@ -67,7 +67,7 @@
 
         <!-- Stylesheet -->
         <link rel="stylesheet" href="./src/style.css" />
-
+        <link rel="preload" as="image" type="image/webp" imagesrcset="./assets/logo.webp" fetchpriority="high" />
         <!-- Schema.org JSON-LD -->
         <script type="application/ld+json">
             {
@@ -143,14 +143,23 @@
         <section class="hero-section">
             <div class="hero-container">
                 <div class="hero-header-row">
-                    <img
-                        src="./logo.webp"
-                        alt="Open Nutrition Logo"
-                        class="hero-inline-logo"
-                        onerror="this.style.display = 'none'"
-                    />
+                    <picture>
+                        <img
+                            src="./logo.webp"
+                            alt="Open Nutrition Logo"
+                            class="hero-inline-logo"
+                            width="144"
+                            height="144"
+                            fetchpriority="high"
+                            decoding="async"
+                            draggable="false"
+                            onerror="this.style.display = 'none'"
+                        />
+                    </picture>
+
                     <h1 class="hero-title">
-                        <span class="title-dark">Open</span> <span class="title-green">Nutrition</span>
+                        <span class="title-dark">Open</span>
+                        <span class="title-green">Nutrition</span>
                     </h1>
                 </div>
 
@@ -832,15 +841,26 @@
         <footer class="app-footer">
             <div class="footer-slim-container">
                 <div class="footer-brand">
-                    <img src="./logo.webp" alt="Logo" class="footer-logo" />
-                    <span class="footer-title">Open <span class="footer-title-green">Nutrition</span></span>
+                    <img
+                        src="./logo.webp"
+                        alt="Open Nutrition Logo"
+                        class="footer-logo"
+                        width="144"
+                        height="144"
+                        loading="lazy"
+                        decoding="async"
+                        draggable="false"
+                        onerror="this.style.display = 'none'"
+                    />
+
+                    <span class="footer-title"> Open <span class="footer-title-green">Nutrition</span> </span>
+
                     <span class="footer-sep">•</span>
-                    <span class="footer-author"
-                        >by
-                        <a href="https://adamnordling.se/" target="_blank" rel="noopener noreferrer"
-                            >Adam Nordling</a
-                        ></span
-                    >
+
+                    <span class="footer-author">
+                        by
+                        <a href="https://adamnordling.se/" target="_blank" rel="noopener noreferrer">Adam Nordling</a>
+                    </span>
                 </div>
                 <div class="footer-center">
                     <span>© <span id="footer-year">2026</span> Open Nutrition</span>
